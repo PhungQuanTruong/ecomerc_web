@@ -44,6 +44,77 @@ header{
     justify-content: space-between;
     padding: 20px 0;
 }
+/* menu */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-right: 50px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    color: var(--main-color);
+}
+
+/* CSS cho label tìm kiếm */
+.search{
+    margin-right: 30px;
+}
+
+.search-label {
+    display: inline-block;
+    margin-right: 10px;
+    color: var(--bg-color); /* Màu chữ */
+    font-weight: 500;
+}
+
+/* CSS cho input tìm kiếm */
+.search-input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f0f0; /* Màu nền */
+    color: var(--text-color); /* Màu chữ */
+    font-size: 14px;
+    width: 150px; /* Độ rộng của input */
+}
+
+/* CSS cho nút tìm kiếm */
+.search-button {
+    background-color: var(--main-color); /* Màu nút tìm kiếm */
+    color: var(--bg-color); /* Màu chữ nút tìm kiếm */
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease; /* Hiệu ứng màu nền nút khi hover */
+}
+
+/* Hiệu ứng hover cho nút tìm kiếm */
+.search-button:hover {
+    background-color: #ff5555; /* Màu nền khi hover */
+}
+
 .container{
     max-width: 1068px;
     margin: auto;
@@ -180,6 +251,116 @@ header{
     cursor: pointer;
     color: var(--main-color);
 }
+/* end region card */
+/* end region menu */
+
+/* CSS cho banner */
+.banner {
+    position: relative;
+    width: 100%;
+    margin-top: 55px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+}
+
+/* CSS cho hiển thị mũi tên chuyển slide (optional) */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+.banner-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Màu nền cho phần nội dung banner (có thể là một lớp mờ) */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.banner-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn-shop-now {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fd4646; /* Màu nền cho nút */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-shop-now:hover {
+    background-color: #e63737; /* Màu nền khi di chuột qua nút */
+}
+
+/*Chỉnh CSS cho nút Next và Previous */
+.next-button, .prev-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.next-button {
+    right: 0;
+    border-radius: 50%;
+}
+
+.prev-button {
+    left: 0;
+    border-radius: 50%;
+}
+
+/* Hover effect cho nút Next và Previous */
+.next-button:hover, .prev-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+/* end region banner */
 
 /* product-content */
 .section-title{
@@ -317,3 +498,4 @@ header{
     font-size: 12px;
     opacity: 0.7; /* Độ mờ của chữ */
 }
+/*end region footer*/
