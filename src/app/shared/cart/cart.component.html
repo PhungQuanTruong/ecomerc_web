@@ -1,0 +1,36 @@
+<div class="cart" [class.active]="isCartOpen$ | async">
+    <h2 class="cart-title">Your Cart</h2>
+    
+    <div class="cart-content">
+        <div class="cart-box" *ngFor="let item of cartItems$ | async">
+            <img [src]="item.image || '/assets/img/product1.jpeg'" [alt]="item.name" class="cart-img">
+            <div class="detail-box">
+                <div class="cart-product-title">{{ item.name }}</div>
+                <div class="cart-price">${{ item.price }}</div>
+                <input 
+                    type="number" 
+                    [value]="item.quantity" 
+                    class="cart-quantity"
+                    min="1"
+                    (change)="updateQuantity(item.id, +$any($event.target).value)">
+            </div>
+            <i class='bx bxs-trash-alt cart-remove' (click)="removeItem(item.id)"></i>
+        </div>
+        
+        <div *ngIf="(cartItems$ | async)?.length === 0" class="empty-cart">
+            <p>Your cart is empty</p>
+        </div>
+    </div>
+
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">${{ total$ | async }}</div>
+    </div>
+    
+    <button type="button" class="btn-buy" (click)="payNow()" [disabled]="(cartItems$ | async)?.length === 0">
+        Pay Now
+    </button>
+    
+    <i class='bx bx-x' id="close-cart" (click)="closeCart()"></i>
+</div>
+

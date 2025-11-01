@@ -1,0 +1,27 @@
+<!-- Banner -->
+<div class="banner">
+    <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlide">
+        <img [src]="slide.image" [alt]="'Slide ' + (i + 1)">
+        <div class="banner-content">
+            <h1>{{ slide.title }}</h1>
+            <p>{{ slide.description }}</p>
+            <a routerLink="/shop" class="btn-shop-now">Shop Now</a>
+        </div>
+    </div>
+    <button class="prev-button bx bx-chevron-left" (click)="previousSlide()"></button>
+    <button class="next-button bx bx-chevron-right" (click)="nextSlide()"></button>
+</div>
+
+<!-- Product -->
+<section class="shop container">
+    <h2 class="section-title">Shop Product</h2>
+    <div class="shop-content">
+        <div class="product-box" *ngFor="let product of products">
+            <img [src]="product.image" [alt]="product.name" class="product-img">
+            <h2 class="product-title">{{ product.name }}</h2>
+            <span class="price">${{ product.price }}</span>
+            <i class='bx bx-cart-download add-cart' (click)="addToCart(product)"></i>
+        </div>
+    </div>
+</section>
+

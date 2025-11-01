@@ -1,0 +1,26 @@
+<header>
+    <div class="nav container">
+        <a routerLink="/" class="logo">JD Sport</a>
+
+        <nav class="menu">
+            <ul>
+                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
+                <li><a routerLink="/about" routerLinkActive="active">About Us</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" placeholder="Search..." class="search-input" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()">
+            <button class="search-button" (click)="onSearch()">
+                <i class='bx bx-search'></i>
+            </button>
+        </div>
+
+        <i class='bx bxs-cart-alt' id="cart-icon" [attr.data-quantity]="cartCount$ | async" (click)="openCart()"></i>
+
+        <app-cart></app-cart>
+    </div>
+</header>
+
